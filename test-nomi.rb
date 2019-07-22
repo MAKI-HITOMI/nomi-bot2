@@ -1,17 +1,24 @@
-﻿require 'twitter'
-require 'date'
+require 'twitter'
 
-client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = ENV['MY_CONSUMER_KEY']        #Consumer Key (API Key)
-  config.consumer_secret     = ENV['MY_CONSUMER_SECRET']     #Consumer Secret (API Secret)
-  config.access_token        = ENV['MY_ACCESS_TOKEN']        #Access Token
-  config.access_token_secret = ENV['MY_ACCESS_TOKEN_SECRET'] #Access Token Secret
+@client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "VyaOUqvHlMMTBbqzBbur2uVk0"
+  config.consumer_secret     = "KPc6a1g7Yi1ZoMU4sUPazaxLEvUUacvvWDPPL57JbzfU1VshbM"
+  config.access_token        = "1152087395388387328-3ssJlajWIzcPsk3wut4JCZj2vyGqIm"
+  config.access_token_secret = "bX70DZaY16hd5sstvmqGtAPNveSTxiUztfYJKjIfzKB0A"
 end
 
-last_update = DateTime.parse(client.user_timeline.first.created_at)
-blank_time = DateTime.now - last_update.new_offset(Rational(3,8))
+@client.update("ぴっぴ")
 
-if blank_time * 24 > 20 then
-client.update("********")
+now1 =DateTime.now
+ 
+if now1.hour == 4
+@client.update("よず")
+elsif now1.hour == 3
+@client.update("さんず")
+elsif now1.hour == 5
+@client.update("ごず")
+elsif now1.hour == 10
+@client.update("ずうず")
+elsif now1.hour == 22
+@client.update("ずうず(夜)")
 end
-client.update("Hello")
