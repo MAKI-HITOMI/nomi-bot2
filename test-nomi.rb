@@ -7,8 +7,6 @@ require 'twitter'
   config.access_token_secret = "bX70DZaY16hd5sstvmqGtAPNveSTxiUztfYJKjIfzKB0A"
 end
 
-@client.update("ぴっぴ")
-
 now1 =DateTime.now
  
 if now1.hour == 4
