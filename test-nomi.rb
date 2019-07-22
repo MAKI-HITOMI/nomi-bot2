@@ -1,10 +1,10 @@
 require 'twitter'
 
 @client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "VyaOUqvHlMMTBbqzBbur2uVk0"
-  config.consumer_secret     = "KPc6a1g7Yi1ZoMU4sUPazaxLEvUUacvvWDPPL57JbzfU1VshbM"
-  config.access_token        = "1152087395388387328-3ssJlajWIzcPsk3wut4JCZj2vyGqIm"
-  config.access_token_secret = "bX70DZaY16hd5sstvmqGtAPNveSTxiUztfYJKjIfzKB0A"
+  config.consumer_key        = ""
+  config.consumer_secret     = ""
+  config.access_token        = 
+  config.access_token_secret = 
 end
 
 now1 =DateTime.now
