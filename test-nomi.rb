@@ -1,4 +1,5 @@
 ﻿require 'twitter'
+require 'date'
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV['MY_CONSUMER_KEY']        #Consumer Key (API Key)
@@ -7,4 +8,10 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = ENV['MY_ACCESS_TOKEN_SECRET'] #Access Token Secret
 end
 
-client.update("ぴちぴちビキニのハマチと愉快なココナッツ投げ祭り")
+last_update = DateTime.parse(client.user_timeline.first.created_at)
+blank_time = DateTime.now - last_update.new_offset(Rational(3,8))
+
+if blank_time * 24 > 20 then
+client.update("********")
+end
+client.update("Hello")
