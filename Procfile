@@ -1,0 +1,1 @@
+bot: ruby test-nomi.rb
